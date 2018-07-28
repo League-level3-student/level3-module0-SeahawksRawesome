@@ -1,5 +1,7 @@
 package _00_IntroToArrays;
 
+import java.util.Random;
+
 public class _00_ArrayCheatSheet {
 	public static void main(String[] args) {
 		// 1. make an array of 5 Strings
@@ -24,16 +26,42 @@ public class _00_ArrayCheatSheet {
 		int[] y = new int[50];
 		// 8. use a for loop to make every value of the integer array a random number
 		for (int i = 0; i < y.length; i++) {
-
+			Random rand = new Random();
+			y[i] = rand.nextInt(100);
 		}
+		
 		// 9. without printing the entire array, print only the smallest number on the
 		// array
+		System.out.println("Starting sort!!");
+		int holder_low = y[0];
+		for (int i = 0; i < y.length; i++) {
+			if(holder_low < y[i]) {
+				holder_low = holder_low;
+			}
+			else {
+				holder_low = y[i];
+			}
+		}
+		System.out.println(holder_low);
+		
+		
+		
 
 		// 10 print the entire array to see if step 8 was correct
-
+		//Did that
 		// 11. print the largest number in the array.
-
+		int holder_high = y[0];
+		for (int i = 0; i < y.length; i++) {
+			if(holder_high > y[i]) {
+				holder_high = holder_high;
+			}
+			else {
+				holder_high = y[i];
+			}
+		}
+		
+		System.out.println(holder_high);
 		// 12. print only the last element in the array
-
+		System.out.println(y[49]);
 	}
 }
