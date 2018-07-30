@@ -7,6 +7,7 @@ import javax.swing.JOptionPane;
 import org.jointheleague.graphical.robot.Robot;
 
 public class _01_RobotRace {
+	static Robot winner;
 	//1. make a main method
 	public static void main( String [] args) {
 		
@@ -37,14 +38,24 @@ public class _01_RobotRace {
 		//6. use a while loop to repeat step 5 until a robot has reached the top of the screen.
 			while(robotList[0].getY() > 50 || robotList[1].getY() > 50 || robotList[2].getY() > 50 || robotList[3].getY() > 50 || robotList[4].getY() > 50) {
 				for(int i = 0; i < robotList.length; i++) {
-					robotList[i].setSpeed(10);
-					robotList[i].move(rand.nextInt(50));
+					if(robotList[i].getY() > 50) {
+						robotList[i].setSpeed(10);
+						robotList[i].move(rand.nextInt(50));
+					}
+					else {
+						winner = robotList[i];
+						JOptionPane.showMessageDialog(null, "Dang, " + winner + " won the competition");
+						break;
+					}
 				}
 			}
 		//7. declare that robot the winner and throw it a party!
-    	
+			
 		//8. try different races with different amounts of robots.
-    	
+			Robot[] robots = new Robot[2];
+			for(int i = 0; i < robots.length; i++) {
+				robots[i] = new Robot();
+			}
 	    //9. make the robots race around a circular track.
 
 	}
