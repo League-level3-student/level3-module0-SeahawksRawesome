@@ -57,7 +57,7 @@ public class _02_FindTheHiddenButton implements ActionListener{
 		jbuts[hiddenButton].setText("ME");
 		//15. Use Thread.sleep(100); to pause the program.
 		try {
-			Thread.sleep(70);
+			Thread.sleep(150);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
